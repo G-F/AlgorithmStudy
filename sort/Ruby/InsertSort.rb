@@ -10,7 +10,22 @@ class InsertSort
 
   def insertSort(array)
     #挿入ソートの処理を書く
+    i = 0
+    while i < array.length do
+      insert(array, i, array[i])
+      i += 1
+    end
     return array
+  end
+
+  def insert(array, pos, value)
+    #挿入ソートの各回の処理
+    index = pos -1;
+   while index >= 0 && array[index] > value do
+      array[index + 1] = array[index];
+      index -= 1
+    end
+    array[index + 1] = value
   end
 end
 
